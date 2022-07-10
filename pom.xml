@@ -99,7 +99,7 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>13.232.178.58:9980/vikramtechnologies/repository/walmart-release/</url>
+	      <url>http://13.232.178.58:9980/vikramtechnologies/repository/walmart-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
