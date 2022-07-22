@@ -40,7 +40,8 @@ stage('DeployAppIntoTomcatServer'){
     finally {
     slacknotifications(currentBuild.result)
     }
-}
+}//Node Closing
+
 def slacknotifications(String buildStatus = 'STARTED') {
   buildStatus =  buildStatus ?: 'SUCCESS'
 
