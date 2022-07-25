@@ -1,0 +1,32 @@
+pipeline
+{
+
+agent any
+tools{
+maven "maven3.8.6"
+}
+stages{
+
+ //Checkout COde stage
+ stage('CheckoutCode')
+ {
+ steps{
+ git branch: 'master', credentialsId: 'f5708724-a441-46f4-8f75-3757193ad3f4', url: 'https://github.com/MithunTechnologiesDevOps/maven-web-application.git' 
+ }
+}
+//Run Unit Test cases & Do the Build
+stage('RunUnitTestcases&Build'){
+steps{
+parallel(
+ RunUnitTestcases:{   
+sh "mvn test" 
+ },
+Build:{
+sh "mvn clean package"
+}
+)
+}
+}
+
+}//stages closing
+}//pipeline closing
